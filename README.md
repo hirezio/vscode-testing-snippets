@@ -2,7 +2,7 @@
 
 VS Code snippets that will make your testing life easier.
 
-[![Version](https://vsmarketplacebadge.apphb.com/version/hirez.hirez-testing-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=hirez-testing-snippets)
+[![Version](https://vsmarketplacebadge.apphb.com/version/hirez.hirez-testing-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=hirez.hirez-testing-snippets)
 [![Installs](https://vsmarketplacebadge.apphb.com/installs-short/hirez.hirez-testing-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=hirez.hirez-testing-snippets)
 [![Code of Conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square)](CODE_OF_CONDUCT.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
