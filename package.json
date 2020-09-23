@@ -1,4 +1,32 @@
 {
+  "name": "hirez-testing-snippets",
+  "publisher": "hirez",
+  "version": "0.0.0",
+  "displayName": "HiRez.io Testing Snippets",
+  "author": {
+    "name": "Shai Reznik",
+    "company": "HiRez.io"
+  },
+  "description": "Snippets that will make your testing experience MUCH faster",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hirezio/vscode-testing-snippets"
+  },
+  "bugs": {
+    "url": "https://github.com/hirezio/vscode-testing-snippets/issues"
+  },
+  "homepage": "https://github.com/hirezio/vscode-testing-snippets#readme",
+  "engines": {
+    "vscode": "^1.31.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "icon": "assets/logo.png",
+  "galleryBanner": {
+    "color": "#ffdb00"
+  },
   "keywords": [
     "Testing snippets",
     "TypeScript",
@@ -9,5 +37,49 @@
     "jasmine-auto-spies",
     "jest-auto-spies",
     "Angular testing"
-  ]
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippets/snippets-ts.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/snippets-js.json"
+      },
+      {
+        "language": "json",
+        "path": "./snippets/snippets-js.json"
+      }
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "yarn lint:commitmsg"
+    }
+  },
+  "scripts": {
+    "commit": "git-cz",
+    "lint:commitmsg": "commitlint -E HUSKY_GIT_PARAMS",
+    "vs-package": "vsce package",
+    "semantic-release": "semantic-release"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "commitizen": "^4.2.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^4.3.0",
+    "semantic-release": "^17.1.2",
+    "semantic-release-vsce": "^3.0.1",
+    "vsce": "^1.79.5"
+  }
 }

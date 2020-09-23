@@ -1,0 +1,103 @@
+{
+  "Angular Component Test": {
+    "prefix": "acomptest",
+    "description": "Angular Component Isolated Unit Test",
+    "body": [
+      "import { TestBed } from '@angular/core/testing';",
+      "import { Spy, createSpyFromClass } from '${1|jasmine,jest|}-auto-spies';",
+      "",
+      "describe('$2', () => {",
+      "  let componentUnderTest: $2;",
+      "",
+      "  Given(() => {",
+      "    TestBed.configureTestingModule({",
+      "      providers: [$2]",
+      "    });",
+      "",
+      "    componentUnderTest = TestBed.inject($2);",
+      "",
+      "  });",
+      "",
+      "  describe('METHOD: $3', () => {",
+      "",
+      "    When(() => {",
+      "      componentUnderTest.$3();",
+      "    });",
+      "",
+      "    describe('GIVEN $3', () => {",
+      "      Given(() => {",
+      "        // $3",
+      "        $6",
+      "      });",
+      "      Then('$4', () => {",
+      "        // $4",
+      "      });",
+      "    });",
+      "",
+      "  });",
+      "});",
+      ""
+    ]
+  },
+  "Angular Service Test": {
+    "prefix": "aservtest",
+    "description": "Angular Service Isolated Unit Test",
+    "body": [
+      "import { TestBed } from '@angular/core/testing';",
+      "import { Spy, createSpyFromClass } from '${1|jasmine,jest|}-auto-spies';",
+      "",
+      "describe('$2', () => {",
+      "  let serviceUnderTest: $2;",
+      "",
+      "  let actualResult: any;",
+      "",
+      "  Given(() => {",
+      "    TestBed.configureTestingModule({",
+      "      providers: [$2]",
+      "    });",
+      "",
+      "    serviceUnderTest = TestBed.inject($2);",
+      "",
+      "    actualResult = undefined;",
+      "",
+      "  });",
+      "",
+      "  describe('METHOD: $3', () => {",
+      "",
+      "    When(() => {",
+      "      serviceUnderTest.$3();",
+      "    });",
+      "",
+      "    describe('GIVEN $4', () => {",
+      "      Given(() => {",
+      "        // $4",
+      "        $6",
+      "      });",
+      "      Then('$5',() => {",
+      "        // $5",
+      "      });",
+      "    });",
+      "",
+      "  });",
+      "});",
+      ""
+    ]
+  },
+  "Add a dependency":{
+    "prefix": "addDep",
+    "description": "Add a dependency to Angular classes' constructor",    
+    "body": [
+      "private ${1/(.)/${1:/downcase}/}: $1,"
+    ]
+  },
+  "Add a spy": {
+    "prefix": "addSpy",
+    "description": "Angular Service Isolated Unit Test",
+    "body": [
+      "let ${1/(.)/${1:/downcase}/}Spy: Spy<$1>;",
+      "{ provide: $1, useValue: createSpyFromClass($1) },",
+      "${1/(.)/${1:/downcase}/}Spy = TestBed.inject<any>($1);"
+      
+    ]
+  }
+}

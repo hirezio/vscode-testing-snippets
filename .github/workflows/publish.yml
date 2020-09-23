@@ -1,0 +1,53 @@
+name: Publish
+on:
+  push:
+    branches:
+      - master
+jobs:
+  release:
+    name: Publish
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: '0'
+
+      - name: Setup Node
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Get yarn cache dir
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Cache Dependencies
+        uses: actions/cache@v2
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: |
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Configure CI Git User
+        run: |
+          git config --global user.name '@hirezio'
+          git config --global user.email 'hirezio@users.noreply.github.com'
+
+      - name: Publish
+        env:
+          VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
+        run: yarn semantic-release
