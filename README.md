@@ -9,7 +9,7 @@ VS Code snippets that will make your testing life easier.
 
 <div align="center">
   <a href="http://testangular.com/?utm_source=github&utm_medium=link&utm_campaign=vscode-testing-snippets">
-    <img src="assets/test-angular.jpg"
+    <img src="https://github.com/hirezio/vscode-testing-snippets/raw/master/assets/test-angular.jpg"
       alt="TestAngular.com - Free Angular Testing Workshop - The Roadmap to Angular Testing Mastery"
       width="600"
     />
