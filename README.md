@@ -18,6 +18,7 @@ VS Code snippets that will make your testing life easier.
   </a>
 </div>
 
+<br/>
 
 # Available Snippets:
 
@@ -35,7 +36,229 @@ VS Code snippets that will make your testing life easier.
 | `addDep` | shortest way to add a private typed dependency to a class constructor |
 | `methodplaceholder` | Generates an empty method that throws an "unimplemented" error |
 
+<br/>
 
+## Snippets Usage
+
+### SNIPPET: `desc`
+
+*Output:*
+```js
+describe('<Your Description>', () => {
+  
+});
+```
+---
+
+### SNIPPET: `giv`
+
+*Output:*
+```js
+Given(() => {
+  
+});
+```
+---
+
+### SNIPPET: `when`
+*Output:*
+```js
+When(() => {
+  
+});
+```
+
+---
+
+### SNIPPET: `then`
+*Output:*
+```js
+Then(() => {
+  
+});
+```
+
+---
+
+
+### SNIPPET: `testcase`
+*Output:*
+```js
+describe('GIVEN: <--Your Given Description-->', () => {
+  
+  Given(() => {
+  
+  });
+  
+  Then('<Your THEN description>', () => {
+  
+  });
+});
+```
+
+---
+
+### SNIPPET: `descwhen`
+*Output:*
+```js
+describe('METHOD: <Method Name>', () => {
+  
+  When(() => {
+    serviceUnderTest.<Method Name>()
+  });
+  
+});
+```
+
+---
+
+### SNIPPET: `acomptest`
+
+⚠ INSTRUCTIONS: 
+1. Choose between "jasmine" or "jest"
+2. Hit "tab" to jump between variables
+
+
+*Output:*
+```ts
+import { TestBed } from '@angular/core/testing';
+import { Spy, createSpyFromClass } from 'jasmine-auto-spies';
+
+describe('<--Your Component Type-->', () => {
+  let componentUnderTest: <--Your Component Type-->;
+
+  Given(() => {
+    TestBed.configureTestingModule({
+      providers: [<--Your Component Type-->]
+    });
+
+    componentUnderTest = TestBed.inject(<--Your Component Type-->);
+
+  });
+
+  describe('METHOD: <--Method Name-->', () => {
+
+    When(() => {
+      componentUnderTest.<--Method Name-->();
+    });
+
+    describe('GIVEN <--Your Given Description-->', () => {
+      Given(() => {
+        // <--Your Given Description-->
+        
+      });
+      Then('<--Your Then Description-->', () => {
+        // <--Your Then Description-->
+      });
+    });
+
+  });
+});
+
+```
+
+---
+
+### SNIPPET: `aservtest`
+
+⚠ INSTRUCTIONS: 
+1. Choose between "jasmine" or "jest"
+2. Hit "tab" to jump between variables
+
+*Output:*
+```ts
+import { TestBed } from '@angular/core/testing';
+import { Spy, createSpyFromClass } from 'jasmine-auto-spies';
+
+describe('<--Your Service Type-->', () => {
+  let serviceUnderTest: <--Your Service Type-->;
+
+  let actualResult: any;
+
+  Given(() => {
+    TestBed.configureTestingModule({
+      providers: [<--Your Service Type-->]
+    });
+
+    serviceUnderTest = TestBed.inject(<--Your Service Type-->);
+
+    actualResult = undefined;
+
+  });
+
+  describe('METHOD: <--Method Name-->', () => {
+
+    When(() => {
+      componentUnderTest.<--Method Name-->();
+    });
+
+    describe('GIVEN <--Your Given Description-->', () => {
+      Given(() => {
+        // <--Your Given Description-->
+        
+      });
+      Then('<--Your Then Description-->', () => {
+        // <--Your Then Description-->
+      });
+    });
+
+  });
+});
+
+```
+
+---
+
+### SNIPPET: `addSpy`
+
+Makes adding an "auto spy" very easy. 
+
+
+⚠ INSTRUCTIONS: 
+1. Write / paste your class type
+2. Hit "tab" to turn the variable to camelCase ("lowercase"s the first letter)
+3. Cut and paste each line to its appropriate place
+
+*Output:*
+```js
+// This goes in your first "Describe":
+let myServiceTypeSpy: Spy<MyServiceType>;
+
+// This goes in your TestBed's "providers" array:
+{ provide: MyServiceType, useValue: createSpyFromClass(MyServiceType) },
+
+// This goes in your first Given:
+MyServiceTypeSpy = TestBed.inject<any>(MyServiceType);
+```
+
+---
+
+### SNIPPET: `addDep`
+
+Makes adding a class constructor dependency very easy. 
+
+⚠ INSTRUCTIONS: 
+1. Write or paste your class type
+2. Hit "tab" to turn the variable to camelCase ("lowercase"s the first letter)
+
+*Output:*
+```js
+private myServiceType: MyServiceType,
+```
+
+---
+
+### SNIPPET: `methodplaceholder`
+*Output:*
+```js
+<--myMethod-->() {
+  throw new Error('Method not implemented.');
+}
+```
+
+
+
+<br/>
 
 ## Contributing
 
@@ -45,9 +268,13 @@ Please read and follow our [Contributing Guidelines](CONTRIBUTING.md) to learn w
 
 Thanks 🙏
 
+<br/>
+
 ## Code Of Conduct
 
 Be kind to each other and please read our [code of conduct](CODE_OF_CONDUCT.md).
+
+<br/>
 
 ## License
 
