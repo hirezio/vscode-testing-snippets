@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/hirezio/vscode-testing-snippets/compare/v1.0.1...v1.0.2) (2020-10-04)
+
+
+### Bug Fixes
+
+* **acomptest:** fix the problem with method and given variables ([807f79c](https://github.com/hirezio/vscode-testing-snippets/commit/807f79c0a29639816dc90452950ecffc5de9fc56))
+
 ## [1.0.1](https://github.com/hirezio/vscode-testing-snippets/compare/v1.0.0...v1.0.1) (2020-09-23)
 
 
