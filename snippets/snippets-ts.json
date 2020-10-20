@@ -87,6 +87,36 @@
       ""
     ]
   },
+  "Angular Micro Test base": {
+    "prefix": "ngtestbase",
+    "description": "Angular Isolated Micro Test",
+    "body": [
+      "import { TestBed } from '@angular/core/testing';",
+      "import { Spy, createSpyFromClass } from '${1|jasmine,jest|}-auto-spies';",
+      "",
+      "describe('$2', () => {",
+      "  let ${3|component,service,directive,pipe|}UnderTest: $2;",
+      "",
+      "  let actualResult: any;",
+      "",
+      "  Given(() => {",
+      "    TestBed.configureTestingModule({",
+      "      providers: [$2]",
+      "    });",
+      "",
+      "    ${3}UnderTest = TestBed.inject($2);",
+      "",
+      "    actualResult = undefined;",
+      "",
+      "  });",
+      "",
+      "  describe('METHOD: $4', () => {",
+      "     $5",
+      "  });",
+      "});",
+      ""
+    ]
+  },
   "Add a dependency":{
     "prefix": "addDep",
     "description": "Add a dependency to Angular classes' constructor",    

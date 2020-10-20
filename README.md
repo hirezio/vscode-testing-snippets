@@ -32,6 +32,7 @@ VS Code snippets that will make your testing life easier.
 | `descwhen` | `describe` with `When` |
 | `acomptest` | Generates an Angular Component test |
 | `aservtest` | Generates an Angular Service test |
+| `ngtestbase` | Generates a base for an Angular micro test |
 | `addSpy` | Adds a jasmine/jest auto spy boilerplate code |
 | `addDep` | shortest way to add a private typed dependency to a class constructor |
 | `methodplaceholder` | Generates an empty method that throws an "unimplemented" error |
@@ -122,7 +123,7 @@ describe('METHOD: <Method Name>', () => {
 *Output:*
 ```ts
 import { TestBed } from '@angular/core/testing';
-import { Spy, createSpyFromClass } from 'jasmine-auto-spies';
+import { Spy, createSpyFromClass } from '<--Your Testing Framework-->-auto-spies';
 
 describe('<--Your Component Type-->', () => {
   let componentUnderTest: <--Your Component Type-->;
@@ -168,7 +169,7 @@ describe('<--Your Component Type-->', () => {
 *Output:*
 ```ts
 import { TestBed } from '@angular/core/testing';
-import { Spy, createSpyFromClass } from 'jasmine-auto-spies';
+import { Spy, createSpyFromClass } from '<--Your Testing Framework-->-auto-spies';
 
 describe('<--Your Service Type-->', () => {
   let serviceUnderTest: <--Your Service Type-->;
@@ -189,7 +190,7 @@ describe('<--Your Service Type-->', () => {
   describe('METHOD: <--Method Name-->', () => {
 
     When(() => {
-      componentUnderTest.<--Method Name-->();
+      serviceUnderTest.<--Method Name-->();
     });
 
     describe('GIVEN <--Your Given Description-->', () => {
@@ -201,6 +202,43 @@ describe('<--Your Service Type-->', () => {
         // <--Your Then Description-->
       });
     });
+
+  });
+});
+
+```
+
+---
+
+### SNIPPET: `ngtestbase`
+
+⚠ INSTRUCTIONS: 
+1. Choose between "jasmine" or "jest"
+2. Hit "tab" to jump between variables
+3. Choose between "component", "service", "directive" or "pipe"
+
+*Output:*
+```ts
+import { TestBed } from '@angular/core/testing';
+import { Spy, createSpyFromClass } from '<--Your Testing Framework-->-auto-spies';
+
+describe('<--Type To Test-->', () => {
+  let <--Angular Type Choice-->UnderTest: <--Type To Test-->;
+
+  let actualResult: any;
+
+  Given(() => {
+    TestBed.configureTestingModule({
+      providers: [<--Type To Test-->]
+    });
+
+    <--Angular Type Choice-->UnderTest = TestBed.inject(<--Type To Test-->);
+
+    actualResult = undefined;
+
+  });
+
+  describe('METHOD: <--Method Name-->', () => {
 
   });
 });
