@@ -1,3 +1,17 @@
+# [2.0.0](https://github.com/hirezio/vscode-testing-snippets/compare/v1.1.0...v2.0.0) (2020-12-22)
+
+
+### Code Refactoring
+
+* **provideautospy:** change `createSpyFromClass` to the shorter `provideAutoSpy` ([81f2ef5](https://github.com/hirezio/vscode-testing-snippets/commit/81f2ef56c350ec1154e1488a34476675b92a306d))
+
+
+### BREAKING CHANGES
+
+* **provideautospy:** Since `jasmine-auto-spies` v6.9.0 and `jest-auto-spies` v1.6.0 there's an ability
+to use the shorter util function `provideAutoSpy()`. So upgrade to those versions in order to not
+experience any import issues.
+
 # [1.1.0](https://github.com/hirezio/vscode-testing-snippets/compare/v1.0.2...v1.1.0) (2020-10-20)
 
 
