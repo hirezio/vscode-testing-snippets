@@ -123,7 +123,7 @@ describe('METHOD: <Method Name>', () => {
 *Output:*
 ```ts
 import { TestBed } from '@angular/core/testing';
-import { Spy, createSpyFromClass } from '<--Your Testing Framework-->-auto-spies';
+import { Spy, provideAutoSpy } from '<--Your Testing Framework-->-auto-spies';
 
 describe('<--Your Component Type-->', () => {
   let componentUnderTest: <--Your Component Type-->;
@@ -169,7 +169,7 @@ describe('<--Your Component Type-->', () => {
 *Output:*
 ```ts
 import { TestBed } from '@angular/core/testing';
-import { Spy, createSpyFromClass } from '<--Your Testing Framework-->-auto-spies';
+import { Spy, provideAutoSpy } from '<--Your Testing Framework-->-auto-spies';
 
 describe('<--Your Service Type-->', () => {
   let serviceUnderTest: <--Your Service Type-->;
@@ -220,7 +220,7 @@ describe('<--Your Service Type-->', () => {
 *Output:*
 ```ts
 import { TestBed } from '@angular/core/testing';
-import { Spy, createSpyFromClass } from '<--Your Testing Framework-->-auto-spies';
+import { Spy, provideAutoSpy } from '<--Your Testing Framework-->-auto-spies';
 
 describe('<--Type To Test-->', () => {
   let <--Angular Type Choice-->UnderTest: <--Type To Test-->;
@@ -263,7 +263,7 @@ Makes adding an "auto spy" very easy.
 let myServiceTypeSpy: Spy<MyServiceType>;
 
 // This goes in your TestBed's "providers" array:
-{ provide: MyServiceType, useValue: createSpyFromClass(MyServiceType) },
+provideAutoSpy(MyServiceType),
 
 // This goes in your first Given:
 MyServiceTypeSpy = TestBed.inject<any>(MyServiceType);

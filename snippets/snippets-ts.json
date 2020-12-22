@@ -4,7 +4,7 @@
     "description": "Angular Component Isolated Unit Test",
     "body": [
       "import { TestBed } from '@angular/core/testing';",
-      "import { Spy, createSpyFromClass } from '${1|jasmine,jest|}-auto-spies';",
+      "import { Spy, provideAutoSpy } from '${1|jasmine,jest|}-auto-spies';",
       "",
       "describe('$2', () => {",
       "  let componentUnderTest: $2;",
@@ -48,7 +48,7 @@
     "description": "Angular Service Isolated Unit Test",
     "body": [
       "import { TestBed } from '@angular/core/testing';",
-      "import { Spy, createSpyFromClass } from '${1|jasmine,jest|}-auto-spies';",
+      "import { Spy, provideAutoSpy } from '${1|jasmine,jest|}-auto-spies';",
       "",
       "describe('$2', () => {",
       "  let serviceUnderTest: $2;",
@@ -92,7 +92,7 @@
     "description": "Angular Isolated Micro Test",
     "body": [
       "import { TestBed } from '@angular/core/testing';",
-      "import { Spy, createSpyFromClass } from '${1|jasmine,jest|}-auto-spies';",
+      "import { Spy, provideAutoSpy } from '${1|jasmine,jest|}-auto-spies';",
       "",
       "describe('$2', () => {",
       "  let ${3|component,service,directive,pipe|}UnderTest: $2;",
@@ -129,7 +129,7 @@
     "description": "Angular Service Isolated Unit Test",
     "body": [
       "let ${1/(.)/${1:/downcase}/}Spy: Spy<$1>;",
-      "{ provide: $1, useValue: createSpyFromClass($1) },",
+      "provideAutoSpy($1),",
       "${1/(.)/${1:/downcase}/}Spy = TestBed.inject<any>($1);"
       
     ]
