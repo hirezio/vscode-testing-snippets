@@ -18,18 +18,18 @@
   },
   "Then method": {
     "prefix": "then",
-    "body": ["Then('$1', () => {", "\t$2", "});", ""]
+    "body": ["Then(`$1`, () => {", "\t$2", "});", ""]
   },
   "Describe function": {
     "prefix": "desc",
     "description": "Describe function",
-    "body": ["describe('$1', () => {", "  $2", "});"]
+    "body": ["describe(`$1`, () => {", "  $2", "});"]
   },
   "Describe and When": {
     "prefix": "descwhen",
     "description": "Creates Describe function and When function",
     "body": [
-      "describe('METHOD: $1', () => {",
+      "describe(`METHOD: $1`, () => {",
       "  When(() => {",
       "     serviceUnderTest.$1()",
       "  });",
@@ -40,7 +40,7 @@
     "prefix": "testcase",
     "description": "Creates a test case for a gwt test",
     "body": [
-      "describe('GIVEN $1', () => {",
+      "describe(`GIVEN $1`, () => {",
       "",
       "  Given(() => {",
       "     // $1",
