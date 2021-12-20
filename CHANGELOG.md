@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/hirezio/vscode-testing-snippets/compare/v2.0.0...v2.0.1) (2021-12-20)
+
+
+### Bug Fixes
+
+* change single-quotes to backticks ([d19446e](https://github.com/hirezio/vscode-testing-snippets/commit/d19446ee6753f0f5e33f9265eada467b9fab1669))
+
 # [2.0.0](https://github.com/hirezio/vscode-testing-snippets/compare/v1.1.0...v2.0.0) (2020-12-22)
 
 
