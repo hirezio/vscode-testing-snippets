@@ -10,7 +10,7 @@ VS Code snippets that will make your testing life easier.
 ## Want to learn more about how to use these snippets correctly?
 
 <div align="center">
-  <a href="http://testangular.com/?utm_source=github&utm_medium=link&utm_campaign=vscode-testing-snippets">
+  <a href="https://hirez.io?utm_medium=Open_Source&utm_source=Github&utm_campaign=Lead_Generation&utm_content=vscode_testing_snippets_readme_banner">
     <img src="https://github.com/hirezio/vscode-testing-snippets/raw/master/assets/test-angular.jpg"
       alt="TestAngular.com - Free Angular Testing Workshop - The Roadmap to Angular Testing Mastery"
       width="600"
