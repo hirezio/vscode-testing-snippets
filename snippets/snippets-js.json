@@ -40,12 +40,12 @@
     "prefix": "testcase",
     "description": "Creates a test case for a gwt test",
     "body": [
-      "describe(`GIVEN $1`, () => {",
+      "describe(`GIVEN $1 THEN $2`, () => {",
       "",
       "  Given(() => {",
       "     // $1",
       "  });",
-      "  Then('$2',() => {",
+      "  Then(() => {",
       "     // $2",
       "  });",
       "});"
