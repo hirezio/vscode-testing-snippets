@@ -4,7 +4,7 @@
     "description": "Placeholder for method - throwing error",
     "body": [
       "$1($2) {",
-      "  throw new Error('Method not implemented.');",
+      "\tthrow new Error('Method not implemented.');",
       "}"
     ]
   },
@@ -23,16 +23,16 @@
   "Describe function": {
     "prefix": "desc",
     "description": "Describe function",
-    "body": ["describe(`$1`, () => {", "  $2", "});"]
+    "body": ["describe(`$1`, () => {", "\t$2", "});"]
   },
   "Describe and When": {
     "prefix": "descwhen",
     "description": "Creates Describe function and When function",
     "body": [
       "describe(`METHOD: $1`, () => {",
-      "  When(() => {",
-      "     serviceUnderTest.$1()",
-      "  });",
+      "\tWhen(() => {",
+      "\t\tserviceUnderTest.$1();",
+      "\t});",
       "});"
     ]
   },
@@ -42,12 +42,12 @@
     "body": [
       "describe(`GIVEN $1`, () => {",
       "",
-      "  Given(() => {",
-      "     // $1",
-      "  });",
-      "  Then('$2',() => {",
-      "     // $2",
-      "  });",
+      "\tGiven(() => {",
+      "\t\t// $1",
+      "\t});",
+      "\tThen('$2',() => {",
+      "\t\t// $2",
+      "\t});",
       "});"
     ]
   },
